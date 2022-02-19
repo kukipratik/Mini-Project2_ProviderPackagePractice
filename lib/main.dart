@@ -21,8 +21,8 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
           title: 'MyShop',
           theme: theme.copyWith(
-            colorScheme:
-                theme.colorScheme.copyWith(secondary: Colors.deepOrange),
+            colorScheme: theme.colorScheme
+                .copyWith(secondary: const Color.fromARGB(255, 235, 20, 5)),
           ),
           home: const ProductsOverviewScreen(),
           routes: {
