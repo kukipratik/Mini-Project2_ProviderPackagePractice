@@ -42,6 +42,11 @@ class Products with ChangeNotifier {
     return [..._items];
   }
 
+  //to give the copy of the actual data; but favorite (if needed)...
+  List<Product> get favoriteItems {
+    return _items.where((element) => element.isFavorite).toList();
+  }
+
   void addItems() {
     // _items.add();
     notifyListeners(); //notifying it's listener whenever this function gets called...
