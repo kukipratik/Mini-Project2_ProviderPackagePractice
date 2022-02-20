@@ -17,6 +17,8 @@ class MyApp extends StatelessWidget {
       fontFamily: 'Lato',
     );
     return ChangeNotifierProvider(
+      //This method will be useful if we want to create the instance ourselves with provider...
+      //unlike ChangeNotifierProvider.value...
       create: (context) => Products(),
       child: MaterialApp(
           title: 'MyShop',
