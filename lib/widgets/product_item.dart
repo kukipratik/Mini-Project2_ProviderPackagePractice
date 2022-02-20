@@ -5,11 +5,12 @@ import 'package:provider/provider.dart';
 import '../screens/product_detail_screen.dart';
 
 class ProductItem extends StatelessWidget {
-  const ProductItem({Key? key}) : super(key: key);
+  // ignore: prefer_const_constructors_in_immutables
+  ProductItem({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final product = Provider.of<Product>(context, listen: true);
+    final product = Provider.of<Product>(context, listen: false);
     // print("\n${product.title}=>${product.isFavorite}");
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
@@ -33,12 +34,8 @@ class ProductItem extends StatelessWidget {
               // print("${value.title}=>${value.isFavorite}");
               return IconButton(
                 icon: value.isFavorite
-                    ? const Icon(
-                        Icons.favorite,
-                      )
-                    : const Icon(
-                        Icons.favorite_border,
-                      ),
+                    ? const Icon(Icons.favorite)
+                    : const Icon(Icons.favorite_border),
                 // color: Theme.of(context).colorScheme.secondary,
                 color: Colors.red,
                 onPressed: () {

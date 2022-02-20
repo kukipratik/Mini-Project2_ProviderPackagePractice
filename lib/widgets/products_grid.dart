@@ -24,7 +24,7 @@ class ProductsGrid extends StatelessWidget {
         return ChangeNotifierProvider.value(
           value: loadedProducts[i], //This will be useful if...
           //...we have grid/listview and if we want to use the instance already created as value
-          child: const ProductItem(),
+          child: ProductItem(),
         );
       },
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
